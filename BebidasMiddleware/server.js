@@ -8,11 +8,12 @@ var conn = mysql.createConnection({'host':'localhost','user':'root','password':'
 var server = http.createServer(function(req,res){
 res.writeHead(200,{'Content-Type':'application/json',"Access-Control-Allow-Origin":"http://localhost:4200"});
 
-  con.query("SELECT * FROM Marcas",function(err,results,fields){
-    res.write(results);
+  conn.query("SELECT * FROM Marcas",function(err,results,fields){
+    res.write(JSON.stringify(results),function(){
+      res.end();
+    });
     console.log(results);
   });
-  res.end();
 
 })
 

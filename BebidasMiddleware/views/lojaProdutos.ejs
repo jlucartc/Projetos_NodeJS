@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>index</title>
+    <title></title>
   </head>
   <body>
-    Index
+    <%= lojaProdutos %>
   </body>
 </html>

@@ -1,16 +1,13 @@
 var express = require('express');
 var router = express.Router();
-
-var Lojas = require('./../models/main.js');
-
-var loja = new Lojas();
+var loja = require('./../models/main.js');
 
 var listaLojas = null;
 
-loja.find(function(err,lojas){
+loja.find(function(err,results){
   if(err) throw err;
-  listaLojas = lojas;
-});
+  listaLojas = results;
+})
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

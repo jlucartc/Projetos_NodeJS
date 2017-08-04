@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
-var db = require('./../db/db');
+var db = require('./../db/db.js').db;
 
 var Schema = mongoose.Schema;
 
-var lojaSchema = new Schema({
+var lojaSchema = Schema({
   nome : String,
-  empresa_id : Schema.ObjectID,
+  empresa_id : String,
   end : {
     bairro : String,
     cep : String,
@@ -15,18 +15,18 @@ var lojaSchema = new Schema({
     apartamento : String
 
   },
-  produtos : [{ id : Schema.ObjectID }]
+  produtos : [{ id : String }]
 });
 
-var produtoSchema = new Schema({
+var produtoSchema = Schema({
   nome : String,
   marca : String,
   volume : { vLitro : Number, vmL : Number}
 });
 
-var mapaSchema = new Schema();
+var mapaSchema = Schema();
 
-var pedidoSchema = new Schema({
+var pedidoSchema = Schema({
   codigo : String,
   nome : String,
   modoEntrega : Boolean,
@@ -39,7 +39,7 @@ var pedidoSchema = new Schema({
     bloco : String,
     apartamento : String
   },
-  listaProdutos : [{ id : Schema.ObjectID , quantidade : Number, valor : Number}],
+  listaProdutos : [{ id : String , quantidade : Number, valor : Number}],
   valor : Number
 });
 

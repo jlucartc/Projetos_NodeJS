@@ -5,6 +5,15 @@
     <title></title>
   </head>
   <body>
-
+    <table>
+      <thead>
+        <th>Codigo</th><th>Nome</th><th>ModoEntrega</th><th>Data</th><th>Telefone</th><th>Email</th><th>End</th><th>ListaProdutos</th><th>Valor</th>
+      </thead>
+      <% for(var i = 0; i < lista.length; i++){ %>
+        <tr>
+          <td><%= lista.i.codigo %></td><td><%= lista.i.nome %></td><td><%= lista.i.modoEntrega %></td><td><%= lista.i.data %></td><td><%= lista.i.telefone %></td><td><%= lista.i.email %></td><td><%= lista.i.end %></td><td><%= lista.i.listaProdutos %></td><td><%= lista.i.valor %></td>
+        </tr>
+      <% } %>
+    </table>
   </body>
 </html>

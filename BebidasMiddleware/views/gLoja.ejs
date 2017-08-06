@@ -6,6 +6,15 @@
   </head>
   <body>
     <h3>Lista lojas</h3><br><br>
-    <%= lojas %>
+    <table>
+      <thead>
+        <th>Nome</th><th>Empresa_id</th><th>endereço</th><th>Produtos</th>
+      </thead>
+      <% for( var i = 0; i < lojas.length; i++){%>
+          <tr>
+            <td><%= lojas.i.nome %></td><%= lojas.i.empresa_id %><td><%= lojas.i.end %></td><td>lojas.i.produtos</td>
+          </tr>
+      <% } %>
+    </table>
   </body>
 </html>

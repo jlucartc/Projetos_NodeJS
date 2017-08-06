@@ -5,10 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
 var users = require('./routes/users');
+var index = require('./routes/index');
 var iMarca = require('./routes/iMarca');
 var iProduto = require('./routes/iProduto');
+var iPedido = require('./routes/iPedido');
+var iLoja = require('./routes/iLoja');
+var gMarca = require('./routes/gMarca');
+var gProduto = require('./routes/gProduto');
+var gPedido = require('./routes/gPedido');
+var gLoja = require('./routes/gLoja');
 
 var app = express();
 
@@ -27,6 +33,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/iMarca', iMarca);
+app.use('/iProduto',iProduto);
+app.use('/iPedido',iPedido);
+app.use('/iLoja',iLoja);
+app.use('/gMarca', gMarca);
+app.use('/gProduto',gProduto);
+app.use('/gPedido',gPedido);
+app.use('/gLoja',gLoja);
 app.post('/addMarca',function(req,res,next){
   var body = req.body;
   var Marca = require('./models/Marca.js');
@@ -35,11 +48,22 @@ app.post('/addMarca',function(req,res,next){
     res.redirect('/users');
   });
 });
-app.use('/iProduto',iProduto);
 app.post('/addProduto',function(req,res,next){
   var body = req.body;
   var Produto = require('./models/Produto.js');
   Produto.create(body);
+  res.redirect('/');
+});
+app.post('/addPedido',function(req,res,next){
+  var body = req.body;
+  var Pedido = require('./models/Pedido.js');
+  Pedido.create(body);
+  res.redirect('/');
+});
+app.post('/addLoja',function(req,res,next){
+  var body = req.body;
+  var Loja = require('./models/Loja.js');
+  Loja.create(body);
   res.redirect('/');
 });
 

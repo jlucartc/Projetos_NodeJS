@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('iLoja', { title: 'Express' });
+  res.render('iLoja', { title: 'Express' , n: 1});
 });
 
 module.exports = router;

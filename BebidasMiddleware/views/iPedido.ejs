@@ -5,6 +5,27 @@
     <title></title>
   </head>
   <body>
-
+    <form class="" action="index.html" method="post">
+      <input type="text" name="codigo" value="">
+      <input type="text" name="nome" value="">
+      <input type="text" name="modoEntrega" value="">
+      <input type="text" name="data" value="">
+      <input type="text" name="telefone" value="">
+      <input type="text" name="email" value="">
+      <input type="text" name="end.cep" value="">
+      <input type="text" name="end.numero" value="">
+      <input type="text" name="end.bloco" value="">
+      <input type="text" name="end.apartamento" value="">
+      <div class="">
+        <button type="button" name="more" onclick="<% n++; %>">+</button><button type="button" name="less" onclick="<% if(n > 0){ n--; }%>">-</button><br>
+        <% for(var j = 0; j < n; j++){ %>
+          <br><br><input type="text" name="listaProdutos.<%=j%>.id" value=""><br>
+          <input type="text" name="listaProdutos.<%=j%>.id" value=""><br>
+          <input type="text" name="listaProdutos.<%=j%>.id" value=""><br>
+        <% } %>
+      <br><br></div>
+      <input type="text" name="valor" value="">
+      <button type="submit" name="button">Enviar</button>
+    </form>
   </body>
 </html>

@@ -14,7 +14,6 @@ var lojaSchema = Schema({
     predio : String,
     apartamento : String
 
-  },
   produtos : [{ id : String }]
 });
 

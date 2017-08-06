@@ -17,6 +17,6 @@ var Pedido = Schema({
   },
   listaProdutos : [{ id : String , quantidade : Number, valor : Number}],
   valor : Number
-});
+},{versionKey : false});
 
 module.exports = db.model('Pedido',Pedido);

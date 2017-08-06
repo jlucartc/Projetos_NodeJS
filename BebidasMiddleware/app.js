@@ -45,7 +45,7 @@ app.post('/addMarca',function(req,res,next){
   var Marca = require('./models/Marca.js');
   Marca.create(body,function(err){
     if (err) throw err;
-    res.redirect('/users');
+    res.redirect('/');
   });
 });
 app.post('/addProduto',function(req,res,next){
@@ -82,7 +82,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{err : err.message});
 });
 
 module.exports = app;

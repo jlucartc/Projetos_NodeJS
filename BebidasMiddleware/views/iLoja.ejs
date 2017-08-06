@@ -5,21 +5,16 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="index.html" method="post">
-      <input type="text" name="nome" value="">
-      <input type="text" name="empresa_id" value="">
-      <input type="text" name="end.bairro" value="">
-      <input type="text" name="end.cep" value="">
-      <input type="text" name="end.rua" value="">
-      <input type="text" name="end.numero" value="">
-      <input type="text" name="end.predio" value="">
-      <input type="text" name="end.apartamento" value="">
-      <div class="">
-        <button type="button" name="mais" onclick="<% n++; %>"></button><button type="button" name="menos" onclick="<% if(n > 0){ n--;}%>"></button><br>
-        <% for(var j = 0; j < n; j++){ %>
-          <input type="text" name="produtos.<%=j%>.id" value="">
-        <% } %>
-      </div>
+    <form class="" action="/addLoja" method="post">
+      <input type="text" name="nome" value="" placeholder="Nome"><br>
+      <input type="text" name="empresa_id" value="" placeholder="EmpresaID"><br>
+      <input type="text" name="end.bairro" value="" placeholder="Bairro"><br>
+      <input type="text" name="end.cep" value="" placeholder="CEP"><br>
+      <input type="text" name="end.rua" value="" placeholder="Rua"><br>
+      <input type="text" name="end.numero" value="" placeholder="Número"><br>
+      <input type="text" name="end.predio" value="" placeholder="Prédio"><br>
+      <input type="text" name="end.apartamento" value="" placeholder="Apartamento"><br>
+      <button type="submit" name="button">Cadastrar</button><br>
     </form>
   </body>
 </html>

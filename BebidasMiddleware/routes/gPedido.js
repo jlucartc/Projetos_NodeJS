@@ -1,21 +1,21 @@
 var express = require('express');
 var router = express.Router();
-var Marca = require('./../models/Marca.js');
+var Pedido = require('./../models/Pedido.js');
 
-var listaMarcas = null;
+var listaPedidos = null;
 
-Marca.find(function(err,results){
+Pedido.find(function(err,results){
   if(!results){
-    listaMarcas = "{}";
+    listaPedidos = "{}";
   }else{
-    listaMarcas = results;
+    listaPedidos = results;
   }
 });
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('gPedido', { title: 'Express' });
+  res.render('gPedido', { title: 'Express', lista : listaPedidos});
 });
 
 module.exports = router;

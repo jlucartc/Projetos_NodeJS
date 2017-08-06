@@ -5,13 +5,13 @@
     <title></title>
   </head>
   <body>
-    <table>
+    <table border="1">
       <thead>
         <th>Nome</th>
       </thead>
       <% for(var i = 0; i < lista.length; i++){ %>
         <tr>
-          <td><%= lista.i.nome %></td>
+          <td><%= lista[i].nome %></td>
         </tr>
       <% } %>
     </table>

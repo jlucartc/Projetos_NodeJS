@@ -6,6 +6,6 @@ var Produto = Schema({
   nome : String,
   marca : String,
   volume : { vLitro : Number, vmL : Number}
-});
+},{versionKey : false});
 
 module.exports = db.model('Produto',Produto);

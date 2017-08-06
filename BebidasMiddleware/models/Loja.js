@@ -15,6 +15,6 @@ var Loja =  Schema({
 
   },
   produtos : [{ id : String }]
-});
+},{versionKey : false});
 
 module.exports = db.model('Loja',Loja);

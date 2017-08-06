@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var lojaPerfil = require('./routes/lojaPerfil');
+var iMarca = require('./routes/iMarca');
+var iProduto = require('./routes/iProduto');
 
 var app = express();
 
@@ -25,10 +26,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-//app.use('/lojaProdutos', users);
-app.use('/lojaPerfil', lojaPerfil);
-//app.use('/lojas', users);
-//app.use('/pedidos', users);
+app.use('/iMarca', iMarca);
+app.post('/addMarca',function(req,res,next){
+  var body = req.body;
+  var Marca = require('./models/Marca.js');
+  Marca.create(body,function(err){
+    if (err) throw err;
+    res.redirect('/users');
+  });
+});
+app.use('/iProduto',iProduto);
+app.post('/addProduto',function(req,res,next){
+  var body = req.body;
+  var Produto = require('./models/Produto.js');
+  Produto.create(body);
+  res.redirect('/');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -14,7 +14,8 @@ Produto.find(function(err,results){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('gProduto', {title: 'Express', lista : listaProdutos});
+  //res.render('gProduto', {title: 'Express', lista : listaProdutos});
+  res.json(listaProdutos);
 });
 
 module.exports = router;

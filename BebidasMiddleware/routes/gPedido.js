@@ -15,7 +15,8 @@ Pedido.find(function(err,results){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('gPedido', { title: 'Express', lista : listaPedidos});
+  //res.render('gPedido', { title: 'Express', lista : listaPedidos});
+  res.json(listaPedidos);
 });
 
 module.exports = router;

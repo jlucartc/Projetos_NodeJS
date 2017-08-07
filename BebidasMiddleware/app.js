@@ -15,10 +15,12 @@ var gMarca = require('./routes/gMarca');
 var gProduto = require('./routes/gProduto');
 var gPedido = require('./routes/gPedido');
 var gLoja = require('./routes/gLoja');
+var cors = require('cors');
 
 var app = express();
 
 // view engine setup
+app.use(cors({origin : "http://localhost:4200",  optionsSuccessStatus: 200}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -36,10 +38,10 @@ app.use('/iMarca', iMarca);
 app.use('/iProduto',iProduto);
 app.use('/iPedido',iPedido);
 app.use('/iLoja',iLoja);
-app.use('/gMarca', gMarca);
-app.use('/gProduto',gProduto);
-app.use('/gPedido',gPedido);
-app.use('/gLoja',gLoja);
+app.use('/gMarcas', gMarca);
+app.use('/gProdutos',gProduto);
+app.use('/gPedidos',gPedido);
+app.use('/gLojas',gLoja);
 app.post('/addMarca',function(req,res,next){
   var body = req.body;
   var Marca = require('./models/Marca.js');

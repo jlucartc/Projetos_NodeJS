@@ -14,7 +14,8 @@ Loja.find(function(err,results){
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('gLoja', { title: 'gLoja', lojas : listaLojas});
+  //res.render('gLoja', { title: 'gLoja', lojas : listaLojas});
+  res.json(listaLojas);
 });
 
 module.exports = router;

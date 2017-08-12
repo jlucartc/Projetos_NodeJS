@@ -1,0 +1,11 @@
+<% if(marca.length > 0){ %>
+<table>
+  <% for(var i = 0; i < marca.length; i++){ %>
+  <tr>
+    <td><%= marca[i].nome %></td><td><a href="/marca/r/<%= marca[i]._id %>">Remover</a></td>
+  </tr>
+  <% } %>
+</table>
+<% }else{ %>
+<h3>Marca inexistente</h3>
+<% } %>

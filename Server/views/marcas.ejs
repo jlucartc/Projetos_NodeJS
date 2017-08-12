@@ -1,0 +1,11 @@
+<% if(lista.length > 0){ %>
+<table>
+  <% for(var i = 0; i < lista.length; i++){ %>
+  <tr>
+    <td><a href="/marca/<%= lista[i]._id %>"><%= lista[i].nome %></a></td>
+  </tr>
+  <% } %>
+</table>
+<% }else{ %>
+<h3>Lista vazia</h3>
+<% } %>

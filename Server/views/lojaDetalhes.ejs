@@ -1,0 +1,11 @@
+<% if(loja.length > 0){ %>
+<table>
+  <% for(var i = 0; i < loja.length; i++){ %>
+  <tr>
+    <td><%= loja[i].nome %></td><td><%= loja[i].end %></td><td><%= loja[i].desc %></td><td><a href="/loja/r/<%= loja[i]._id %>">Remover</a></td>
+  </tr>
+  <% } %>
+</table>
+<% }else{ %>
+<h3>Loja inexistente</h3>
+<% } %>

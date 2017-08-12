@@ -1,0 +1,18 @@
+<% if(marcas.length > 0){ %>
+<form class="" action="/produto/a" method="post">
+  <input type="text" name="nome" value="" autocomplete="off" placeholder="Nome"><br>
+  <select class="" name="marca">
+    <% for(var i = 0; i < marcas.length; i++){ %>
+    <option value="<%= marcas[i].nome %>"><%= marcas[i].nome %></option>
+    <% } %>
+  </select><br>
+  <select class="" name="volume.unidade">
+    <option value="L">Litro(L)</option>
+    <option value="mL">Mililitro(mL)</option>
+  </select><br>
+  <input type="text" name="volume.valor" value="" autocomplete="off" placeholder="Volume(L/mL)"><br>
+  <button type="submit">Enviar</button>
+</form>
+<% }else{ %>
+<h3>Cadastro de produto bloqueado : falta de marcas disponíveis</h3>
+<% } %>

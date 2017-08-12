@@ -1,0 +1,11 @@
+<% if(produto.length > 0){ %>
+<table>
+  <% for(var i = 0; i < produto.length; i++){ %>
+  <tr>
+    <td><%= produto[i].nome %></td><td><%= produto[i].marca %></td><td><%= produto[i].volume %></td><td><a href="/produto/r/<%= produto[i]._id %>">Remover</a></td>
+  </tr>
+  <% } %>
+</table>
+<% }else{ %>
+<h3>Produto inexistente</h3>
+<% } %>

@@ -28,6 +28,7 @@ var aproduto = require('./routes/aproduto');
 var rloja = require('./routes/rloja');
 var rmarca = require('./routes/rmarca');
 var rproduto = require('./routes/rproduto');
+var pesquisar = require('./routes/pesquisar');
 
 var cors = require('cors');
 
@@ -86,6 +87,10 @@ app.use('/produto/r/:id',rproduto);
 app.use('/lojas/j',jlojas);
 app.use('/marcas/j',jmarcas);
 app.use('/produtos/j',jprodutos);
+
+///
+
+app.use('/pesquisar',pesquisar);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
